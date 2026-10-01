@@ -13,7 +13,7 @@
 ; whoami.asm — x86-64 Linux
 section .data
     msg     db  "sigkill", 10
-            db  "homelab | networking | security", 10
+            db  "twice best gg btw", 10
     len     equ $ - msg
 
 section .text
@@ -35,8 +35,8 @@ _start:
 sigkill@homelab:~$ nasm -f elf64 whoami.asm -o whoami.o
 sigkill@homelab:~$ ld whoami.o -o whoami
 sigkill@homelab:~$ ./whoami
-sigkill aka IoT
-homelab | networking | security
+sigkill
+twice best gg btw
 sigkill@homelab:~$ ls -lh whoami
 -rwxr-xr-x 1 sigkill sigkill 8.7K Oct  1 02:27 whoami
 sigkill@homelab:~$ echo $?
