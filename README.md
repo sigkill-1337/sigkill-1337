@@ -10,9 +10,9 @@
 </p>
 
 ```nasm
-; whoami.asm — x86-64 Linux, no libc, no bloat
+; whoami.asm — x86-64 Linux
 section .data
-    msg     db  "sigkill aka IoT", 10
+    msg     db  "sigkill", 10
             db  "homelab | networking | security", 10
     len     equ $ - msg
 
@@ -48,7 +48,6 @@ sigkill@homelab:~$ echo $?
 - 🖥️ **Homelab enjoyer** — Proxmox VE, VMware, VLANs, firewalls
 - 🌐 **Networking** — Cisco, Aruba, MikroTik
 - 🔐 **Interested in** systems and cybersecurity
-- 🧪 **Philosophy** — minimal setups, no bloat
 
 ## 🛠️ Tech stack
 
