@@ -9,9 +9,38 @@
   <a href="https://instagram.com/cs_net_py"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
 </p>
 
-```bash
-sigkill@homelab:~$ whoami
-> sigkill aka IoT — sysadmin wannabe, network tinkerer, anti-bloat
+```nasm
+; whoami.asm — x86-64 Linux, no libc, no bloat
+section .data
+    msg     db  "sigkill aka IoT", 10
+            db  "homelab | networking | security", 10
+    len     equ $ - msg
+
+section .text
+    global _start
+
+_start:
+    mov     rax, 1          ; sys_write
+    mov     rdi, 1          ; stdout
+    lea     rsi, [rel msg]
+    mov     rdx, len
+    syscall
+
+    mov     rax, 60         ; sys_exit
+    xor     rdi, rdi        ; return 0
+    syscall
+```
+
+```console
+sigkill@homelab:~$ nasm -f elf64 whoami.asm -o whoami.o
+sigkill@homelab:~$ ld whoami.o -o whoami
+sigkill@homelab:~$ ./whoami
+sigkill aka IoT
+homelab | networking | security
+sigkill@homelab:~$ ls -lh whoami
+-rwxr-xr-x 1 sigkill sigkill 8.7K Oct  1 02:27 whoami
+sigkill@homelab:~$ echo $?
+0
 ```
 
 ## 👾 About me
@@ -25,6 +54,7 @@ sigkill@homelab:~$ whoami
 
 **Languages & frameworks**
 
+![Assembly](https://img.shields.io/badge/Assembly-654FF0?style=for-the-badge&logo=assemblyscript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
