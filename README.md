@@ -32,14 +32,14 @@ _start:
 ```
 
 ```console
-sigkill@homelab:~$ nasm -f elf64 whoami.asm -o whoami.o
-sigkill@homelab:~$ ld whoami.o -o whoami
-sigkill@homelab:~$ ./whoami
+sigkill@localhost:~$ nasm -f elf64 whoami.asm -o whoami.o
+sigkill@localhost:~$ ld whoami.o -o whoami
+sigkill@localhost:~$ ./whoami
 sigkill
 twice best gg btw
-sigkill@homelab:~$ ls -lh whoami
+sigkill@localhost:~$ ls -lh whoami
 -rwxr-xr-x 1 sigkill sigkill 8.7K Oct  1 02:27 whoami
-sigkill@homelab:~$ echo $?
+sigkill@localhost:~$ echo $?
 0
 ```
 
